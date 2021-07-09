@@ -7,7 +7,7 @@ export default (state = {}, action) => {
         names: names,
         brand: brand,
         alcohol: alcohol,
-        id: id
+        id: idd
       }
     });
   default:
