@@ -34,7 +34,6 @@ TapDetail.propTypes = {
   tap: PropTypes.object,
   onClickingDelete: PropTypes.func,
   // onClickingEdit: PropTypes.func,
-
   onClickingSubtractPint: PropTypes.func
 };
 

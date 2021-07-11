@@ -23,33 +23,14 @@ function Tap(props){
       <p>Brand Name: {props.brand}</p>
       <p>ABV: {props.alcohol}%</p>
       <p>Pints Left: {props.pint}</p>
-     
       
       <hr/>
-
-
  
     </div>
     
       
 
  <hr/>
-
-
-
-
- 
-
-
-
-
-
-
-
-
-      
-
-
 
       
 

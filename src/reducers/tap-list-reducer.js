@@ -10,11 +10,11 @@ export default (state = {}, action) => {
         id: id
       }
     });
-    case 'DELETE_TAP':
-      let newState = { ...state };
-      delete newState[id];
-      return newState;
-    default:
-      return state;
-    }
-  };
+  case 'DELETE_TAP':
+    let newState = { ...state };
+    delete newState[id];
+    return newState;
+  default:
+    return state;
+  }
+};

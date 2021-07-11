@@ -6,7 +6,7 @@ function Header() {
   return (
     <React.Fragment>
       <img src={tapsImage} id="beerPic" />
-      <ReusableForm/>
+
    
       
       </React.Fragment>
