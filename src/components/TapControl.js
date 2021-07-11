@@ -17,7 +17,7 @@ class TapControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
+
       selectedTap: null,
       editing: false
 
@@ -28,15 +28,14 @@ class TapControl extends React.Component {
   handleClick = () => {
     if (this.state.selectedTap != null) {
       this.setState({
-        formVisibleOnPage: false,
-        selectedTap: null
+
+        selectedTap: null,
+        editing: false
  
       });
       
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-      }));
+      
     }
   }
 
@@ -146,7 +145,8 @@ if (this.state.selectedTap != null) {
 }
 
 TapControl.propTypes = {
-  masterTapList: PropTypes.object
+  masterTapList: PropTypes.object,
+  formVisibleOnPage: PropTypes.bool
 };
 
 const mapStateToProps = state => {
