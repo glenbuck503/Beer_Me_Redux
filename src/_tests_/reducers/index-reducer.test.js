@@ -1,4 +1,9 @@
 import rootReducer from '../../reducers/index';
+import { createStore } from 'redux';
+import formVisibleReducer from '../../reducers/form-visible-reducer';
+import tapListReducer from '../../reducers/tap-list-reducer';
+
+let store = createStore(rootReducer);
 
 describe("rootReducer", () => {
 
@@ -7,6 +12,14 @@ describe("rootReducer", () => {
       masterTapList: {},
       formVisibleOnPage: false
     });
+  });
+
+  test('Check that initial state of tapListReducer matches root reducer', () => {
+    expect(store.getState().masterTapList).toEqual(tapListReducer(undefined, { type: null }));
+  });
+  
+  test('Check that initial state of formVisibleReducer matches root reducer', () => {
+    expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, { type: null }));
   });
 
 });
