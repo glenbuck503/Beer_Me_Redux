@@ -1,6 +1,17 @@
 import tapListReducer from '../../reducers/tap-list-reducer';
 
 describe('tapListReducer', () => {
+
+  const currentState = {
+    1: {names: 'test',
+    brand: 'tester1',
+    alcohol: 'testerAlcohol',
+    id: 1 },
+    2: {names: 'test2',
+    brand: 'tester2',
+    alcohol: 'tester2Alcohol',
+    id: 2 }
+  }
   let action;
   const tapData = {
     names: 'extra',
@@ -33,6 +44,17 @@ describe('tapListReducer', () => {
     });
   });
 
-
+  test('Should successfully delete a tap', () => {
+    action = {
+      type: 'DELETE_TAP',
+      id: 1
+    };
+    expect(tapListReducer(currentState, action)).toEqual({
+      2: {names: 'deleteNames',
+        brand: 'deleteBrand',
+        alcohol: 'deleteAlcohol',
+        id: 2 }
+    });
+  });
 
   });
