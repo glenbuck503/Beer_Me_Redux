@@ -50,9 +50,9 @@ describe('tapListReducer', () => {
       id: 1
     };
     expect(tapListReducer(currentState, action)).toEqual({
-      2: {names: 'deleteNames',
-        brand: 'deleteBrand',
-        alcohol: 'deleteAlcohol',
+      2: {names: 'test2',
+        brand: 'tester2',
+        alcohol: 'tester2Alcohol',
         id: 2 }
     });
   });
