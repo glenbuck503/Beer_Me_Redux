@@ -5,6 +5,7 @@ import TapList from './TapList';
 import TapDetail from './TapDetail';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
+import * as a from './../actions';
 
 
 
@@ -32,27 +33,16 @@ class TapControl extends React.Component {
       
     } else {
       const { dispatch } = this.props;
-    const action = {
-      type: 'TOGGLE_FORM'
-    }
-    dispatch(action);
+      const action = a.toggleForm();
+      dispatch(action);
     }
   }
 
   handleAddingNewTapToList = (newTap) => {
     const { dispatch } = this.props;
-    const { id, names, brand, alcohol } = newTap;
-    const action = {
-      type: 'ADD_TAP',
-      id: id,
-      names: names,
-      brand: brand,
-      alcohol: alcohol,
-    }
+    const action = a.addTap(newTap);
     dispatch(action);
-    const action2 = {
-      type: 'TOGGLE_FORM'
-    }
+    const action2 = a.toggleForm();
     dispatch(action2);
   }
 
@@ -63,10 +53,7 @@ class TapControl extends React.Component {
 
   handleDeletingTap = (id) => {
     const { dispatch } = this.props;
-    const action = {
-      type: 'DELETE_TAP',
-      id: id
-    }
+    const action = a.deleteTap(id);
     dispatch(action);
     this.setState({selectedTap: null});
   }
@@ -77,16 +64,14 @@ class TapControl extends React.Component {
   }
 
   handleEditingTapInList = (tapToEdit) => {
-    const editedMasterTapList = this.state.masterTapList
-      .filter(tap => tap.id !== this.state.selectedTap.id)
-      .concat(tapToEdit);
+    const { dispatch } = this.props;
+    const action = a.addTap(tapToEdit);
+    dispatch(action);
     this.setState({
-        masterTapList: editedMasterTapList,
-        editing: false,
-        selectedTap: null
-      });
+      editing: false,
+      selectedTap: null
+    });
   }
-
   handleSubtractPint = (id) => {
     const selectedTap = this.state.masterTapList.filter(tap => tap.id === id)[0];
     
