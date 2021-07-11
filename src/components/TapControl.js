@@ -141,7 +141,8 @@ TapControl.propTypes = {
 const mapStateToProps = state => {
   return {
     masterTapList: state.masterTapList,
-    formVisibleOnPage: state.formVisibleOnPage
+    formVisibleOnPage: state.formVisibleOnPage,
+    selectedTap: state.selectedTap
   }
 }
 TapControl = connect(mapStateToProps)(TapControl);

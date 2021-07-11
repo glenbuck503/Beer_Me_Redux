@@ -10,7 +10,7 @@ tap.id = v4();
 
 function handleNewTapSubmission(event) {
   event.preventDefault();
-  props.onNewTapCreation({names: event.target.names.value, brand: event.target.brand.value,alcohol: event.target.alcohol.value,pint:124, id: v4()});
+  props.onNewTapCreation({names: event.target.names.value, pint: 124, brand: event.target.brand.value,alcohol: event.target.alcohol.value, id: v4()});
 }
 return (
 
@@ -24,7 +24,7 @@ return (
   
   NewTap.propTypes = {
     onNewTapCreation: PropTypes.func,
-    // onSubTractPint: PropTypes.func,
+    onSubTractPint: PropTypes.func,
     formSubmissionHandler: PropTypes.func,
   };
   
