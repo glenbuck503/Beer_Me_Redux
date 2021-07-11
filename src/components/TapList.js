@@ -6,55 +6,27 @@ import PropTypes from "prop-types";
 
 
 function TapList(props){
-  const {tap, onSubtractPint, onClickingEdit, onClickingDelete} = props;
 
   return (
     <React.Fragment>
-
       <hr/>
-
-  
-      {props.tapList.map((tap) =>
+      {Object.values(props.tapList).map((tap) =>
         <Tap
-  
-         whenTapClicked = { props.onTapSelection }
-
-         
-
+          whenTapClicked = { props.onTapSelection }
           names={tap.names}
           brand={tap.brand}
           alcohol={tap.alcohol}
           pint={tap.pint}
-          key={tap.id}
-     
-          id={tap.id}/>
-
-        
-
-
-      
+          id={tap.id}
+          key={tap.id}/>
       )}
-                
-                
-
-
-
-               
-      
     </React.Fragment>
-   
-   
-   
-    
   );
 }
 
 TapList.propTypes = {
-  tap: PropTypes.func,
-  onClickingDelete: PropTypes.func,
-  // onClickingEdit: PropTypes.func,
-  onSubTractPint: PropTypes.func
+  tapList: PropTypes.object,
+  onTapSelection: PropTypes.func
 };
-
 
 export default TapList;

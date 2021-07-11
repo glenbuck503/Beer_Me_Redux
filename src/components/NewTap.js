@@ -24,7 +24,7 @@ return (
   
   NewTap.propTypes = {
     onNewTapCreation: PropTypes.func,
-    onSubTractPint: PropTypes.func,
+    // onSubTractPint: PropTypes.func,
     formSubmissionHandler: PropTypes.func,
   };
   

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { v4 } from "uuid";
+import TapDetail from './TapDetail';
 
 
 
@@ -8,8 +9,7 @@ import { v4 } from "uuid";
 function Tap(props){
   
   
-  const {tap, onSubTractPint, onClickingEdit, onClickingDelete} = props;
-
+  
   return (
    
     <React.Fragment>
@@ -30,7 +30,7 @@ function Tap(props){
 
  
     </div>
-    <div onClick = {() => props.onClickingDelete(props.id)}></div>
+    
       
 
  <hr/>
@@ -56,7 +56,9 @@ function Tap(props){
     </React.Fragment>
   );
 }
-
+TapDetail.propTypes = {
+  tap: PropTypes.object
+}
 
 Tap.propTypes = {
 
@@ -68,7 +70,7 @@ Tap.propTypes = {
   whenTapClicked: PropTypes.func,
   onSubTractPint: PropTypes.func,
   onClickingDelete: PropTypes.func,
-  buttonText: PropTypes.string
+  // buttonText: PropTypes.string
   
 
   

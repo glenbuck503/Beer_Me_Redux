@@ -122,8 +122,8 @@ if (this.state.selectedTap != null) {
 
     } else {
       
-      currentlyVisibleState = <TapList tapList={this.state.masterTapList} onTapSelection={this.handleChangingSelectedTap}
-      onSubtractPint = {this.handleSubtractPint}/>
+      currentlyVisibleState = <TapList tapList={this.props.masterTapList} onTapSelection={this.handleChangingSelectedTap}/>
+      // onSubtractPint = {this.handleSubtractPint}/>
      
       buttonText = "Add Tap";
  

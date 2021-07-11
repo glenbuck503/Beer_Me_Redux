@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import { createStore } from 'redux';
-import reducer from './reducers/ticket-list-reducer';
+import reducer from './reducers/tap-list-reducer';
 import { Provider } from 'react-redux';
 
 
