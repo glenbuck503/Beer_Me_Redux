@@ -59,11 +59,13 @@ class TapControl extends React.Component {
   }
 
   handleDeletingTap = (id) => {
-    const newMasterTapList = this.state.masterTapList.filter(tap => tap.id !== id);
-    this.setState({
-      masterTapList: newMasterTapList,
-      selectedTap: null
-    });
+    const { dispatch } = this.props;
+    const action = {
+      type: 'DELETE_TAP',
+      id: id
+    }
+    dispatch(action);
+    this.setState({selectedTap: null});
   }
 
   handleEditClick = () => {
