@@ -8,10 +8,6 @@ import PropTypes from "prop-types";
 
 
 
-
-
-
-
 class TapControl extends React.Component {
 
   constructor(props) {
