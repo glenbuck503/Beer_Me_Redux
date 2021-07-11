@@ -13,4 +13,14 @@ describe('Beer Me actions', () => {
       type: 'TOGGLE_FORM'
     });
   });
+
+  it('addTap should create ADD_TAP action', () => {
+    expect(actions.addTap({names: 'actionTest', brand: 'action', alcohol: 'actionAlcohol', id: 1})).toEqual({
+      type: 'ADD_TAP',
+      names: 'actionTest',
+      brand: 'action',
+      alcohol: 'actionAlcohol',
+      id: 1
+    });
+  });
 });
