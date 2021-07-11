@@ -35,7 +35,11 @@ class TapControl extends React.Component {
       });
       
     } else {
-      
+      const { dispatch } = this.props;
+    const action = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(action);
     }
   }
 
@@ -50,8 +54,12 @@ class TapControl extends React.Component {
       alcohol: alcohol,
     }
     dispatch(action);
-    this.setState({formVisibleOnPage: false});
+    const action2 = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(action2);
   }
+
   handleChangingSelectedTap = (id) => {
     const selectedTap = this.props.masterTapList[id];
     this.setState({selectedTap: selectedTap});
@@ -113,7 +121,7 @@ if (this.state.selectedTap != null) {
       buttonText = "Return to Tap List";
  
       
-    } else if (this.state.formVisibleOnPage) {
+    } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewTap onNewTapCreation={this.handleAddingNewTapToList} 
       onSubtractPint = {this.handleSubtractPint}/>
       buttonText = "Return to Tap List";
