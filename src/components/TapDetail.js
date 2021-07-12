@@ -17,8 +17,6 @@ function TapDetail(props){
       <h3>ABV :{tap.alcohol}%</h3>
       <h3>Pints Left :{tap.pint}</h3>
     
-   
-      {/* <button onClick={ ()=> onClickingEdit(props.pint) }>Update Tap</button>  */}
 
       <button onClick={()=> onClickingDelete(tap.id) }>Remove Tap</button>
 
