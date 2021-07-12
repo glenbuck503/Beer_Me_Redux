@@ -37,6 +37,9 @@ function Tap(props){
     </React.Fragment>
   );
 }
+TapDetail.propTypes = {
+  tap: PropTypes.object
+}
 
 Tap.propTypes = {
 
@@ -46,6 +49,7 @@ Tap.propTypes = {
   pint: PropTypes.number,
   id: PropTypes.string,
   whenTapClicked: PropTypes.func,
+  whenSubtractPintClicked: PropTypes.func
   
 };
 
