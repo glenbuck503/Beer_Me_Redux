@@ -39,6 +39,7 @@ class TapControl extends React.Component {
   }
 
   handleAddingNewTapToList = (newTap) => {
+    console.log(newTap)
     const { dispatch } = this.props;
     const action = a.addTap(newTap);
     dispatch(action);
@@ -73,7 +74,7 @@ class TapControl extends React.Component {
     });
   }
   handleSubtractPint = (id) => {
-    const selectedTap = this.state.masterTapList.filter(tap => tap.id === id)[0];
+    const selectedTap = this.props.masterTapList[id];
     
     if (selectedTap.pint > 0){
       selectedTap.pint -= 1;
@@ -103,16 +104,14 @@ if (this.state.selectedTap != null) {
  
       
     } else if (this.props.formVisibleOnPage) {
-      currentlyVisibleState = <NewTap onNewTapCreation={this.handleAddingNewTapToList} 
-      onSubtractPint = {this.handleSubtractPint}/>
-      buttonText = "Return to Tap List";
-
+      currentlyVisibleState = <NewTap onNewTapCreation={this.handleAddingNewTapToList} />
+      
+      buttonText = "Return to Tap List"
 
     } else {
       
       currentlyVisibleState = <TapList tapList={this.props.masterTapList} onTapSelection={this.handleChangingSelectedTap}/>
       // onSubtractPint = {this.handleSubtractPint}/>
-     
       buttonText = "Add Tap";
  
       
@@ -123,10 +122,6 @@ if (this.state.selectedTap != null) {
       
         {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText} </button>
-
-
- 
-     
       </React.Fragment>
     );
   }

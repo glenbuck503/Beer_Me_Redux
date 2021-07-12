@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 
 
 function TapList(props){
+  console.log(props)
   return (
     <React.Fragment>
       <hr />
@@ -25,7 +26,6 @@ function TapList(props){
     </React.Fragment>
   );
 }
-
 
 
 TapList.propTypes = {

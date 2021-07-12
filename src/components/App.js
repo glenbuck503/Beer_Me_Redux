@@ -11,8 +11,6 @@ function App(){
               <div class="test">
 
        <p>Welcome to The Tap Room!</p>
-   
-      
 
 
        <TapControl/>
